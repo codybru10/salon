@@ -27,6 +27,7 @@ describe(Stylist) do
       test_stylist = Stylist.new({:id => nil, :name => 'Cody'})
       test_stylist.save()
       expect(Stylist.all()).to(eq([test_stylist]))
+  binding.pry    
     end
   end
 
