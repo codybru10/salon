@@ -40,6 +40,15 @@ describe(Client) do
    end
  end
 
+ describe('#update') do
+   it('will update a record with a change in the database') do
+     test_client = Client.new({:id => nil, :name => 'Joe'})
+     test_client.save()
+     test_client.update({:name => "Joseph"})
+     expect(test_client.name()).to(eq("Joseph"))
+    end
+  end
+
 
 
 end
