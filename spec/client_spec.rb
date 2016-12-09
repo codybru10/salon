@@ -49,6 +49,17 @@ describe(Client) do
     end
   end
 
+  describe('#delete') do
+    it('will delete a selected record') do
+      test_client1 = Client.new({:id => nil, :name => 'Cindy'})
+      test_client1.save()
+      test_client2 = Client.new({:id => nil, :name => 'Jessica'})
+      test_client2.save()
+      test_client2.delete()
+      expect(Client.all()).to(eq([test_client1]))
+    end
+  end
+
 
 
 end
