@@ -8,39 +8,38 @@ describe(Client) do
     end
   end
 
-#   describe('.all') do
-#     it('empty array at first') do
-#       expect(Stylist.all()).to(eq([]))
-#     end
-#   end
-#
-#   describe('#==') do
-#     it('is the same stylist if it has the same name') do
-#       stylist1 = Stylist.new({:id => nil, :name => 'Cody'})
-#       stylist2 = Stylist.new({:id => nil, :name => 'Cody'})
-#       expect(stylist1).to(eq(stylist2))
-#     end
-#   end
-#
-#   describe('.save') do
-#     it('saves user input to database') do
-#       test_stylist = Stylist.new({:id => nil, :name => 'Cody'})
-#       test_stylist.save()
-#       expect(Stylist.all()).to(eq([test_stylist]))
-#   binding.pry
-#     end
-#   end
-#
-#   describe(".find") do
-#    it("returns a stylist by its ID") do
-#      test_stylist1 = Stylist.new({:id => nil, :name => 'Cody'})
-#      test_stylist1.save()
-#      test_stylist2 = Stylist.new({:id => nil, :name => 'John'})
-#      test_stylist2.save()
-#      expect(Stylist.find(test_stylist2.id())).to(eq(test_stylist2))
-#    end
-#  end
-#
-#
-#
+  describe('.all') do
+    it('empty array at first') do
+      expect(Client.all()).to(eq([]))
+    end
+  end
+
+  describe('#==') do
+    it('is the same client if it has the same name') do
+      client1 = Client.new({:id => nil, :name => 'Cindy'})
+      client2 = Client.new({:id => nil, :name => 'Cindy'})
+      expect(client1).to(eq(client2))
+    end
+  end
+
+  describe('.save') do
+    it('saves user input to database') do
+      test_client = Client.new({:id => nil, :name => 'Cindy'})
+      test_client.save()
+      expect(Client.all()).to(eq([test_client]))
+    end
+  end
+
+  describe(".find") do
+   it("returns a client by its ID") do
+     test_client1 = Client.new({:id => nil, :name => 'Cindy'})
+     test_client1.save()
+     test_client2 = Client.new({:id => nil, :name => 'Jessica'})
+     test_client2.save()
+     expect(Client.find(test_client2.id())).to(eq(test_client2))
+   end
+ end
+
+
+
 end
