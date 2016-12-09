@@ -69,6 +69,20 @@ end
 
 get("/stylists/:id/clients/:id") do
   @client = Client.find(params.fetch("id").to_i())
-print @client
   erb(:client_info)
+end
+
+patch("/stylists/:id/clients/:id") do
+  name = params.fetch("name")
+  @client = Client.find(params.fetch("id").to_i())
+  @client.update({:name => name})
+  erb(:client_info)
+end
+
+
+delete("/stylists/:id/clients/:id") do
+  @client = Client.find(params.fetch("id").to_i())
+  @client.delete()
+  @clients = Client.all()
+  erb(:index)
 end
