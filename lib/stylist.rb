@@ -49,7 +49,6 @@ class Stylist
   define_method(:clients) do
     list_clients = []
     clients = DB.exec("SELECT * FROM clients WHERE stylist_id = #{self.id()};")
-    binding.pry
     clients.each() do |client|
       id = client.fetch('id').to_i()
       name = client.fetch('name')
