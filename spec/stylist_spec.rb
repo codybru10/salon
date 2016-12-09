@@ -40,6 +40,15 @@ describe(Stylist) do
    end
  end
 
+ describe('#update') do
+   it('will update a record with a change in the database') do
+     test_stylist1 = Stylist.new({:id => nil, :name => 'Cody'})
+     test_stylist1.save()
+     test_stylist1.update({:name => "JoAnn"})
+     expect(test_stylist1.name()).to(eq("JoAnn"))
+    end
+  end
+
 
 
 end

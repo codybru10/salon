@@ -37,6 +37,10 @@ class Stylist
     found_stylist
   end
 
+  define_method(:update) do |attributes|
+    @name = attributes.fetch(:name, @name)
+    DB.exec("UPDATE stylists SET name = '#{@name}' WHERE id = #{self.id};")
+  end
 
 
 end
