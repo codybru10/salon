@@ -26,6 +26,7 @@ describe(Stylist) do
     it('saves user input to database') do
       test_stylist = Stylist.new({:id => nil, :name => 'Cody'})
       test_stylist.save()
+
       expect(Stylist.all()).to(eq([test_stylist]))
     end
   end
@@ -64,10 +65,10 @@ describe(Stylist) do
      it("returns all clients of a stylists") do
        stylist = Stylist.new({:id => nil, :name => 'Toni'})
        stylist.save()
-       client1 = Client.new({:id => nil, :name => 'Ashley', :stylist_id => nil})
+       client1 = Client.new({:id => nil, :name => 'Ashley', :stylist_id => 1})
        client1.save
-       client2 = Client.new({:id => nil, :name => 'Mary', :stylist_id => nil})
-       client2.save   
+       client2 = Client.new({:id => nil, :name => 'Mary', :stylist_id => 1})
+       client2.save
        expect(stylist.clients()).to(eq([client1, client2]))
      end
    end

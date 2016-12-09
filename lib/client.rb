@@ -25,8 +25,8 @@ class Client
   end
 
   define_method(:save) do
-    record = DB.exec("INSERT INTO clients (name, stylist_id) VALUES ('#{@name}', #{@stylist_id});")
-    # @id = record.first().fetch('id').to_i()
+    record = DB.exec("INSERT INTO clients (name, stylist_id) VALUES ('#{@name}' #{@stylist_id}) RETURNING id;")
+    @id = record.first().fetch('id').to_i()
   end
 
   define_singleton_method(:find) do |id|
