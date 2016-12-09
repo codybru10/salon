@@ -33,7 +33,6 @@ describe(Client) do
     it('saves user input to database') do
       test_client = Client.new({:id => nil, :name => 'Cindy', :stylist_id => 1})
       test_client.save()
-      binding.pry
       expect(Client.all()).to(eq([test_client]))
     end
   end
