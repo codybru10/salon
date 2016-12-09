@@ -9,7 +9,9 @@ describe(Stylist) do
   end
 
   describe('#all') do
-    it('empty array ')
+    it('empty array at first') do
+      expect(Stylist.all()).to(eq([]))
+    end
   end
 
 
