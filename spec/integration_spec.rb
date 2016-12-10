@@ -9,14 +9,13 @@ describe('see stylist list', {:type => :feature}) do
     click_link('See Stylists')
     expect(page).to have_content("Your Current Stylist")
   end
+end
 
 describe('add stylist', {:type => :feature}) do
   it('allows user to add stylist') do
     visit('/stylists')
     fill_in('name', :with => 'Cody')
     click_button('Add')
-    expect(page).to have_content("Here are your stylists")
+    expect(page).to have_content("Your Current")
   end
-end
-
 end

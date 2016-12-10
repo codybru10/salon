@@ -1,20 +1,25 @@
 <h1>Your Current Stylist</h1>
 
-<% if @stylists.any?() %>
-  <h3>Here are your stylists:</h3>
+<div class="row">
+  <div class="col-md-12 well" align="center">
 
-  <ul>
-    <% @stylists.each() do |stylist| %>
-      <li><a href="/stylists/<%= stylist.id()%>"><%= stylist.name() %></a></li>
+    <% if @stylists.any?() %>
+      <h3 class="well-header">Here are your stylists:</h3>
+
+      <ul>
+        <% @stylists.each() do |stylist| %>
+          <li><a href="/stylists/<%= stylist.id()%>"><%= stylist.name() %></a></li>
+        <% end %>
+      </ul>
+
+    <% else %>
+
+        <p>There are no stylists yet!</p>
+
     <% end %>
-  </ul>
 
-<% else %>
-
-    <p>There are no stylists yet!</p>
-
-<% end %>
-
+  </div>
+</div>
 
 <hr>
 

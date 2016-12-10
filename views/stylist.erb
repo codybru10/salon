@@ -1,5 +1,6 @@
 <h4>Client List for: <%= @stylist.name() %></h4>
 
+<hr>
 <% if @stylist.clients().any?() %>
   <h3>Here are all the clients for <%= @stylist.name() %>:</h3>
 
@@ -12,7 +13,6 @@
   <% else %>
     <p><%= @stylist.name() %> has no clients yet</p>
   <% end %>
-<hr>
 
 
 <hr>
@@ -23,7 +23,7 @@
   <label for="name">Name of Client:</label>
   <input id="name" name="name" type="text">
 
-  <button type="submit">Add Client</button>
+  <button class="btn btn-primary" type="submit">Add Client</button>
 </form>
 
 <hr>

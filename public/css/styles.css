@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+  background: linear-gradient(#2F2A7D, #8EAFD5);
+  background-repeat: no-repeat;
+}
+
+h1, p, h4, label, h3 {
+  color: white;
+}
+
+html {
+  height: 100%;
+}
+
+.well-header {
+  color: black;
+}
+
+.well {
+  margin: 0 auto;
+}
