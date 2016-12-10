@@ -6,7 +6,7 @@ require("./lib/client")
 require("pg")
 
 
-DB = PG.connect({:dbname => 'salon_test'})
+DB = PG.connect({:dbname => 'salon'})
 
 #home page
 get('/') do
