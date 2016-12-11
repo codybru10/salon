@@ -20,7 +20,7 @@ $ In psql tab, enter the following lines of code:
 * CREATE DATABASE salon;
 * \c salon;
 * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar);
-* CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylist_id);
+* CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylist_id int);
 
 $ Open new terminal window - enter "ruby app.rb"
 $ Go to localhost:4567 in web browser
