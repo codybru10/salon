@@ -19,6 +19,12 @@ get('/stylists') do
   erb(:stylists)
 end
 
+get('/clients') do
+  @clients = Client.all()
+  erb(:clients)
+end
+
+
 #saves stylist entered into form
 post('/stylists') do
   name = params.fetch("name")
@@ -69,6 +75,12 @@ end
 
 
 get("/stylists/:id/clients/:id") do
+  @client = Client.find(params.fetch("id").to_i())
+  @stylist = Stylist.find(params.fetch("id").to_i())
+  erb(:client_info)
+end
+
+get("/clients/:id") do
   @client = Client.find(params.fetch("id").to_i())
   @stylist = Stylist.find(params.fetch("id").to_i())
   erb(:client_info)
